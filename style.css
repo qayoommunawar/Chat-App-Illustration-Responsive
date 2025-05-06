@@ -1,0 +1,349 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 3. Enable keyword animations */
+  /* @media (prefers-reduced-motion: no-preference) {
+    html {
+      interpolate-size: allow-keywords;
+    }
+  } */
+  
+  html,body{
+    width: 100%;
+  }
+
+  body {
+    /* 4. Add accessible line-height */
+    line-height: 1.2;
+    /* 5. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    font-family: "Rubika", sans-serif;
+    font-size: 16px;
+    background-color: var(--clr-light-grey-voilet);
+    padding: 3rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  body::after{
+    position: absolute;
+    content: "";
+    background: linear-gradient(var(--grdnt-magneta), var(--grdnt-voilet));
+    width: 50%;
+    height: 600px;
+    top: 0;
+    left: 0px;
+    z-index: -10;
+    border-bottom-right-radius: 100%;
+  }
+
+
+  /* 6. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 7. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 8. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 9. Improve line wrapping */
+  /* p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  } */
+  
+  /*
+    10. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+:root{
+    /*primary colors*/
+    --clr-pale-voilet: hsl(276, 100%, 81%);
+    --clr-md-voilet: hsl(276, 55%, 52%);
+    --clr-dark-voilet: hsl(271, 15%, 43%);
+    --clr-grey-blue: hsl(206, 6%, 79%);
+    --clr-very-dark-voilet: hsl(271, 36%, 24%);
+    --clr-dark-grey-voilet: hsl(270, 7%, 64%);
+    /* gradients */
+    --grdnt-magneta: hsl(293, 100%, 63%);
+    --grdnt-voilet: hsl(264, 100%, 61%);
+    /* secondary colors*/
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-light-grey-voilet: hsl(270, 20%, 96%);
+    --clr-very-light-magneta: hsl(289, 100%, 72%);
+}
+
+.wrapper{
+    width: 85%;
+    margin: 0 auto;
+    display: grid;
+    place-content: center;
+    gap: 1.5rem;
+}
+
+
+
+
+
+.mble-ring{
+    background-color: var(--clr-white);
+    padding: 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 10px hsl(0, 2%, 51%);
+    max-width: 360px;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.mble-ring::before{
+  content: "";
+  background-color: var(--clr-white);
+  border-radius: 0.5rem;
+  width: 40%;
+  height: 25px;
+  top: 10px;
+  left: 30%;
+  z-index: 1;
+  position: absolute;
+}
+
+
+.inner-padding{
+    background-color: var(--clr-light-grey-voilet);
+    border-radius: 1rem;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    
+}
+
+/* profile */
+
+
+.inner-padding .chat-profile-name{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient( var(--grdnt-magneta), var(--grdnt-voilet));
+    border-radius: 16px 16px 0 0;
+    padding: 0.5rem 1rem 0rem 1.5rem;
+    min-height: 80px;
+    color: var(--clr-white);
+}
+
+
+
+.inner-padding .chat-profile-name .chat-dp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-padding .chat-profile-name .chat-dp h2{
+    font-size: 1rem;
+    line-height: 1;
+    /* font-weight: 500; */
+}
+
+.inner-padding .chat-profile-name .chat-dp span{
+    font-size: 14px;
+    color: var(--clr-pale-voilet);
+}
+
+.inner-padding .chat-profile-name .chat-dp img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 2px solid var(--clr-white);
+    margin-inline-end: 0.7rem;
+}
+
+.inner-padding .chat-profile-name i.dots{
+    margin-left: auto;
+    
+}
+
+
+/* chat column 1 */
+
+ul.first-chat li.first-chat-col{
+    background-color: var(--clr-grey-blue);
+    padding: 0.5rem;
+    width: 70%;
+    color: var(--clr-md-voilet);
+    border-radius: 0.5rem 0.5rem 0.5rem 0;
+}
+
+
+/* column-2 */
+
+ul.second-chat.flex-col{
+    align-items: flex-end;
+}
+
+ul.second-chat li.second-chat-col{
+    background-color: var(--clr-grey-blue);
+    padding: 0.5rem;
+    width: 70%;
+    color: var(--clr-md-voilet);
+    border-radius: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.flex-row{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+ul.second-chat li.flex-row img{
+    width: 60px;
+    height: 60px;
+    border-radius: 0.56rem;
+}
+
+/* 3rd column */
+
+ul.third-chat li.third-chat-col{
+    background-color: var(--clr-grey-blue);
+    padding: 0.5rem;
+    width: 70%;
+    color: var(--clr-md-voilet);
+    border-radius: 0.5rem 0.5rem 0.5rem 0;
+}
+
+ul.third-chat li.price{
+    background: linear-gradient( var(--grdnt-magneta), var(--grdnt-voilet));
+    padding: 1rem;
+    border-radius: 0.5rem 0.5rem 0.5rem 0;
+    color: var(--clr-white);
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+}
+
+ul.third-chat span{
+    font-size: 1rem;
+    font-weight: 700;
+    margin-left: auto;
+}
+
+.input-msg{
+    position: relative;
+    padding: 1rem;
+}
+
+.input-msg input{
+    background-color: var(--clr-white);
+    border: none;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.input-msg i.fa-chevron-right{
+    position: relative;
+    top: 50%;
+}
+
+.input-msg i.fa-chevron-right {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--clr-white); 
+    background-color: var(--clr-very-dark-voilet);
+    pointer-events: none;
+    padding: 0.5rem;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.wrapper-text{
+    text-align: center;
+}
+
+.wrapper-text h1.main-heading{
+    color: var(--clr-very-dark-voilet);
+    margin-block-end: 1rem;
+
+}
+
+.wrapper-text p.main-text{
+    color: var(--clr-dark-grey-voilet);
+    line-height: 1.5;
+}
+
+
+@media (min-width: 867px){
+
+  .wrapper{
+    width: 75%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+  .wrapper-text{
+    text-align: left;
+  }
+
+  body::after{
+    width: 40%;
+    height: 70%;
+    top: 0;
+    left: -100px;
+    z-index: -10;
+    border-radius: 0 0 50% 50%;
+  }
+
+
+  .mble-ring{
+    max-width: 320px;
+    width: 100%;
+}
+
+
+}
